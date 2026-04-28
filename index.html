@@ -3,165 +3,268 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Breaks a Buying Habit?</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Syne+Mono&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<title>Born into a Harder World — UNICEF Child Functioning</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --black:#080808;--white:#f0ede6;--pink:#ff2d6b;--blue:#2d6bff;
-  --yellow:#ffcc00;--green:#00e5a0;--orange:#ff6b2d;
-  --dim:#121212;--dim2:#1c1c1c;--muted:#555;--rule:#222;
-  --D:'Syne',sans-serif;--M:'Syne Mono',monospace;--S:'Instrument Serif',serif;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:   #D94F3D;
+  --blue:  #4A90D9;
+  --green: #2E9E6B;
+  --dark:  #1a1a1a;
+  --mid:   #555555;
+  --light: #999999;
+  --rule:  #E8E8E8;
+  --bg:    #FFFFFF;
+  --off:   #F8F8F8;
+  --font:  'Arial', sans-serif;
 }
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:var(--D);overflow-x:hidden}
-#prog{position:fixed;top:0;left:0;height:3px;background:var(--yellow);z-index:300;width:0%;transition:width .08s linear}
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 52px;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
-.nl{font-family:var(--M);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow)}
-.nr{display:flex;gap:28px;list-style:none}
-.nr a{font-family:var(--M);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
-.nr a:hover{color:var(--white)}
-/* HERO */
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
-.hbg{position:absolute;inset:0;background-image:url('image1.jpg');background-size:cover;background-position:center top;filter:brightness(.18) saturate(.3);z-index:0}
-.hbg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,8,8,.6) 0%,transparent 60%)}
-.hc{position:relative;z-index:2;padding:130px 52px 80px;width:100%}
-.htag{font-family:var(--M);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:28px;display:flex;align-items:center;gap:14px}
-.htag::before{content:'';width:32px;height:1px;background:var(--yellow)}
-.hq{font-size:clamp(60px,10vw,136px);line-height:.9;font-weight:800;letter-spacing:-.035em;margin-bottom:36px}
-.hq .a{color:var(--white);display:block}
-.hq .b{color:var(--white);font-family:var(--S);font-style:italic;font-weight:400;display:block;line-height:1}
-.hq .c{color:var(--pink);display:block}
-.hq .c span{color:var(--yellow)}
-.hdeck{font-family:var(--M);font-size:11px;line-height:1.9;color:rgba(240,237,230,.45);max-width:480px;margin-bottom:52px}
-.hstats{display:flex;border-top:1px solid var(--rule);padding-top:32px;flex-wrap:wrap;gap:20px}
-.hs{padding-right:32px;border-right:1px solid var(--rule)}
-.hs:last-child{border-right:none}
-.hsn{font-size:32px;font-weight:800;color:var(--yellow);line-height:1;display:block}
-.hsl{font-family:var(--M);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-.hscroll{position:absolute;bottom:40px;left:52px;z-index:2;font-family:var(--M);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);display:flex;align-items:center;gap:10px}
-.hscroll::before{content:'';width:1px;height:44px;background:rgba(255,255,255,.15)}
-/* MARTINI STRIP */
-.mstrip{background:var(--dim);border-bottom:1px solid var(--rule);padding:0 52px;display:flex;align-items:stretch}
-.ms-lbl{font-family:var(--M);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;padding:16px 24px 16px 0;border-right:1px solid var(--rule);margin-right:0;flex-shrink:0}
-.ms-phases{display:flex;flex:1}
-.msp{flex:1;padding:16px 20px;border-right:1px solid var(--rule);font-family:var(--M)}
-.msp:last-child{border-right:none}
-.msp-n{font-size:22px;font-weight:800;display:block;line-height:1;margin-bottom:3px}
-.msp-name{font-size:8px;letter-spacing:.12em;text-transform:uppercase;display:block}
-.msp-desc{font-size:7px;opacity:.4;display:block;margin-top:2px}
-.msp.bl{color:var(--blue)}.msp.pk{color:var(--pink)}.msp.gr{color:var(--green)}
-/* LAYOUT */
-section{padding:96px 52px}
-.si{max-width:1100px;margin:0 auto}
-/* SECTION LABEL */
-.slbl{display:flex;align-items:center;gap:14px;margin-bottom:52px}
-.stag{font-family:var(--M);font-size:8px;letter-spacing:.16em;text-transform:uppercase;padding:4px 11px;border-radius:2px;flex-shrink:0}
-.stag.bl{background:rgba(45,107,255,.1);color:var(--blue);border:1px solid rgba(45,107,255,.2)}
-.stag.pk{background:rgba(255,45,107,.1);color:var(--pink);border:1px solid rgba(255,45,107,.2)}
-.stag.gr{background:rgba(0,229,160,.1);color:var(--green);border:1px solid rgba(0,229,160,.2)}
-.stag.ye{background:rgba(255,204,0,.1);color:var(--yellow);border:1px solid rgba(255,204,0,.2)}
-.srule{flex:1;height:1px;background:var(--rule)}
-.snum{font-family:var(--M);font-size:9px;color:var(--muted);flex-shrink:0}
-/* TITLES */
-.bt{font-size:clamp(38px,5.5vw,76px);font-weight:800;line-height:.97;letter-spacing:-.025em;margin-bottom:28px}
-.bt em{font-family:var(--S);font-style:italic;font-weight:400}
-.pink{color:var(--pink)}.blue{color:var(--blue)}.yellow{color:var(--yellow)}.green{color:var(--green)}.orange{color:var(--orange)}
-/* BODY TEXT */
-.bt2{font-family:var(--M);font-size:12px;line-height:1.9;color:rgba(240,237,230,.55);max-width:600px}
-.bt2 p+p{margin-top:.9em}
-.bt2 strong{color:var(--white)}
-/* GRID */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:40px 0;align-items:start}
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin:40px 0}
-/* STAT CARDS */
-.sc{background:var(--dim);padding:28px 22px;position:relative;overflow:hidden}
-.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.sc.pi::before{background:var(--pink)}.sc.bl::before{background:var(--blue)}
-.sc.ye::before{background:var(--yellow)}.sc.gr::before{background:var(--green)}
-.sc-n{font-size:52px;font-weight:800;line-height:1;margin-bottom:8px}
-.sc-l{font-family:var(--M);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.6}
-/* CHART WRAPPERS */
-.cw{margin:40px 0}
-.clbl{font-family:var(--M);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.clbl::after{content:'';flex:1;height:1px;background:var(--rule)}
-.cimg{width:100%;display:block;border:1px solid var(--rule);cursor:zoom-in;transition:transform .35s,box-shadow .35s}
-.cimg:hover{transform:scale(1.012);box-shadow:0 16px 64px rgba(0,0,0,.7)}
-.ccap{font-family:var(--M);font-size:9px;color:var(--muted);margin-top:10px;line-height:1.65}
-/* IFRAME CHARTS */
-.iframe-wrap{border:1px solid var(--rule);margin:40px 0;overflow:hidden;position:relative}
-.iframe-wrap iframe{display:block;width:100%;border:none;background:var(--dim)}
-.iframe-label{font-family:var(--M);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;background:var(--dim)}
-.iframe-badge{font-family:var(--M);font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(0,229,160,.25);padding:2px 7px}
-/* PHOTO BREAK */
-.pb{position:relative;overflow:hidden;margin:0}
-.pb img{width:100%;height:100%;object-fit:cover;display:block}
-.pb::before{content:'';position:absolute;inset:0;background:rgba(8,8,8,.75);z-index:1}
-.pb-txt{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;text-align:center;padding:32px}
-.pb-big{font-size:clamp(48px,8vw,100px);font-weight:800;line-height:.92;letter-spacing:-.03em}
-.pb-big em{color:var(--yellow);font-family:var(--S);font-style:italic;font-weight:400}
-.pb-sm{font-family:var(--M);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,230,.4);margin-top:12px}
-/* PULL QUOTE */
-.pq{padding:80px 52px;background:var(--dim);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.pq-inner{max-width:780px;margin:0 auto;text-align:center}
-.pq-t{font-family:var(--S);font-size:clamp(28px,4vw,52px);font-style:italic;line-height:1.3;color:var(--white)}
-.pq-t em{color:var(--yellow)}
-.pq-a{font-family:var(--M);font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:20px}
-/* FINDING BOX */
-.fbox{background:var(--dim);border-left:4px solid var(--yellow);padding:20px 24px;margin:28px 0;display:flex;gap:20px;align-items:flex-start}
-.fbox-n{font-size:52px;font-weight:800;color:var(--yellow);opacity:.25;line-height:1;flex-shrink:0}
-.fbox-t{font-family:var(--M);font-size:12px;line-height:1.75;color:rgba(240,237,230,.6)}
-.fbox-t strong{color:var(--white)}
-/* DATA TABLE */
-.dtbl{width:100%;border-collapse:collapse;font-family:var(--M);font-size:10px;margin:24px 0}
-.dtbl th{padding:10px 14px;border-bottom:2px solid var(--rule);color:var(--muted);font-size:7px;letter-spacing:.12em;text-transform:uppercase;font-weight:400;text-align:left}
-.dtbl td{padding:10px 14px;border-bottom:1px solid var(--rule);color:rgba(240,237,230,.6)}
-.dtbl tr:hover td{background:var(--dim2);color:var(--white)}
-.dtbl .hl{color:var(--yellow);font-weight:700}
-/* METHOD BOX */
-.mbox{background:var(--dim);border:1px solid var(--rule);padding:24px 28px;margin:20px 0}
-.mbox-h{font-family:var(--M);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.mbox-h::after{content:'';flex:1;height:1px;background:var(--rule)}
-.mbox-b{font-family:var(--M);font-size:11px;line-height:1.8;color:rgba(240,237,230,.5)}
-.mbox-b a{color:var(--yellow);text-decoration:none}
-.mbox-b a:hover{text-decoration:underline}
-/* FOOTER */
-footer{background:var(--dim);border-top:1px solid var(--rule);padding:64px 52px 44px}
-.fi{max-width:1100px;margin:0 auto}
-.ft{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap;margin-bottom:48px}
-.ftitle{font-size:clamp(32px,4vw,52px);font-weight:800;line-height:.97;letter-spacing:-.025em}
-.ftitle em{font-family:var(--S);font-style:italic;font-weight:400;color:var(--yellow)}
-.fdeck{font-family:var(--M);font-size:10px;color:var(--muted);margin-top:16px;max-width:380px;line-height:1.75}
-.flinks{display:flex;flex-direction:column;gap:10px}
-.flinks a{font-family:var(--M);font-size:9px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s;letter-spacing:.04em}
-.flinks a::before{content:'→';color:var(--yellow);flex-shrink:0}
-.flinks a:hover{color:var(--white)}
-.fb{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--rule);flex-wrap:wrap;gap:10px}
-.fbcopy{font-family:var(--M);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.7}
-.fbdata{font-family:var(--M);font-size:8px;color:var(--muted)}
-.fbdata a{color:var(--yellow);text-decoration:none}
-/* LIGHTBOX */
-#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out}
-#lb.on{display:flex}
-#lb img{max-width:90vw;max-height:88vh}
-#lbx{position:absolute;top:24px;right:32px;font-family:var(--M);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);cursor:pointer}
-/* REVEAL */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
-.rv.on{opacity:1;transform:none}
-.rvl{opacity:0;transform:translateX(-28px);transition:opacity .75s ease,transform .75s ease}
-.rvl.on{opacity:1;transform:none}
-/* RESPONSIVE */
-@media(max-width:780px){
-  nav{padding:14px 24px}.nr{display:none}
-  section{padding:64px 24px}.hc{padding:100px 24px 60px}
-  .mstrip{padding:0 24px;flex-direction:column}
-  .ms-lbl{border-right:none;border-bottom:1px solid var(--rule);padding:14px 0}
-  .ms-phases{flex-direction:column}
-  .msp{border-right:none;border-bottom:1px solid var(--rule)}
-  .g2{grid-template-columns:1fr}.g3{grid-template-columns:1fr 1fr}
-  .hstats{gap:16px}
-  footer{padding:44px 24px 32px}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--dark);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PROGRESS ── */
+#prog {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: var(--red); z-index: 300; width: 0%;
+  transition: width .08s linear;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 52px; padding: 0 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { font-size: 11px; color: var(--light); letter-spacing: .06em; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 11px; color: var(--mid); text-decoration: none;
+  letter-spacing: .05em; transition: color .2s;
+}
+.nav-links a:hover { color: var(--red); }
+
+/* ── PAGE WRAPPER ── */
+.page { max-width: 860px; margin: 0 auto; padding: 0 48px; }
+
+/* ── HERO ── */
+.hero {
+  padding: 120px 0 72px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-eyebrow {
+  font-size: 10px; color: var(--mid); letter-spacing: .18em;
+  text-transform: uppercase; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before {
+  content: ''; width: 24px; height: 1px; background: var(--red);
+}
+h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 700; line-height: 1.05;
+  letter-spacing: -.025em; margin-bottom: 22px;
+}
+h1 em { font-style: italic; font-weight: 400; color: var(--red); }
+.hero-deck {
+  font-size: 16px; line-height: 1.85; color: var(--mid);
+  max-width: 580px; margin-bottom: 44px;
+}
+.hero-deck strong { color: var(--dark); font-weight: 600; }
+
+/* ── HERO STATS ── */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--rule); padding-top: 28px;
+}
+.hs { padding-right: 28px; border-right: 1px solid var(--rule); margin-right: 28px; }
+.hs:last-child { border-right: none; margin-right: 0; }
+.hs-n { font-size: 38px; font-weight: 700; color: var(--red); line-height: 1; display: block; }
+.hs-l { font-size: 11px; color: var(--light); margin-top: 5px; line-height: 1.5; }
+
+/* ── MARTINI STRIP ── */
+.martini {
+  background: var(--off);
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: stretch;
+  padding: 0 48px;
+}
+.martini-lbl {
+  font-size: 9px; color: var(--light); letter-spacing: .18em;
+  text-transform: uppercase;
+  display: flex; align-items: center;
+  padding: 14px 20px 14px 0;
+  border-right: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+.martini-phases { display: flex; flex: 1; }
+.mphase {
+  flex: 1; padding: 14px 20px;
+  border-right: 1px solid var(--rule);
+  font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+}
+.mphase:last-child { border-right: none; }
+.mphase-n { font-size: 20px; font-weight: 700; display: block; margin-bottom: 2px; line-height: 1; }
+.mphase-sub { font-size: 9px; color: var(--light); display: block; margin-top: 1px; }
+.mphase.b { color: var(--blue); }
+.mphase.r { color: var(--red); }
+.mphase.g { color: var(--green); }
+
+/* ── SECTIONS ── */
+section { padding: 80px 0; }
+section.alt { background: var(--off); padding: 80px 0; }
+section.alt .page { /* inherits */ }
+
+/* ── SECTION LABELS ── */
+.slabel {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 36px;
+}
+.stag {
+  font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px; flex-shrink: 0;
+}
+.stag.b { color: var(--blue); border: 1px solid rgba(74,144,217,.25); background: rgba(74,144,217,.06); }
+.stag.r { color: var(--red);  border: 1px solid rgba(217,79,61,.25);  background: rgba(217,79,61,.06); }
+.stag.g { color: var(--green);border: 1px solid rgba(46,158,107,.25); background: rgba(46,158,107,.06); }
+.srule { flex: 1; height: 1px; background: var(--rule); }
+
+/* ── HEADINGS ── */
+h2 {
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 700; line-height: 1.08;
+  letter-spacing: -.02em; margin-bottom: 20px;
+}
+h2 em { font-style: italic; font-weight: 400; color: var(--red); }
+
+/* ── BODY TEXT ── */
+.btext {
+  font-size: 15px; line-height: 1.85;
+  color: var(--mid); max-width: 640px;
+}
+.btext p + p { margin-top: .85em; }
+.btext strong { color: var(--dark); font-weight: 600; }
+
+/* ── PULL QUOTE ── */
+.pq {
+  border-left: 3px solid var(--red);
+  padding: 14px 20px; margin: 36px 0;
+  background: rgba(217,79,61,.04);
+}
+.pq-t { font-size: 18px; font-style: italic; line-height: 1.55; color: var(--dark); }
+.pq-a { font-size: 10px; color: var(--light); margin-top: 8px; letter-spacing: .08em; text-transform: uppercase; }
+
+/* ── STAT CARDS ── */
+.stat-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; margin: 36px 0; border: 1px solid var(--rule);
+}
+.scard { padding: 22px 18px; background: var(--bg); position: relative; }
+.scard::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.scard.r::before { background: var(--red); }
+.scard.b::before { background: var(--blue); }
+.scard.g::before { background: var(--green); }
+.scard-n { font-size: 38px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+.scard-n.r { color: var(--red); }
+.scard-n.b { color: var(--blue); }
+.scard-n.g { color: var(--green); }
+.scard-l { font-size: 11px; color: var(--light); line-height: 1.5; }
+
+/* ── CHART FRAMES ── */
+.chart-frame { margin: 40px 0; }
+.chart-title { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+.chart-sub   { font-size: 11px; color: var(--light); margin-bottom: 16px; letter-spacing: .03em; }
+.chart-note  { font-size: 11px; color: var(--light); margin-top: 10px; line-height: 1.6; }
+.chart-img   {
+  width: 100%; display: block;
+  border: 1px solid var(--rule);
+  cursor: zoom-in;
+  transition: box-shadow .25s;
+}
+.chart-img:hover { box-shadow: 0 4px 24px rgba(0,0,0,.1); }
+
+/* iframe for interactive charts */
+.chart-iframe {
+  width: 100%; border: 1px solid var(--rule);
+  display: block; background: var(--bg);
+}
+
+/* ── TWO-UP LAYOUT ── */
+.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 40px 0; align-items: start; }
+
+/* ── FOOTNOTE BOX ── */
+.footnote-box {
+  background: var(--off); border: 1px solid var(--rule);
+  padding: 20px 24px; margin: 40px 0;
+  font-size: 12px; color: var(--mid); line-height: 1.75;
+}
+.footnote-box strong { color: var(--dark); font-weight: 600; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--off);
+  border-top: 1px solid var(--rule);
+  padding: 52px 0 40px;
+}
+.footer-inner {
+  max-width: 860px; margin: 0 auto; padding: 0 48px;
+  display: flex; justify-content: space-between;
+  gap: 48px; flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.footer-title { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+.footer-title em { font-style: italic; font-weight: 400; color: var(--red); }
+.footer-desc { font-size: 13px; color: var(--mid); max-width: 360px; line-height: 1.7; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+.footer-links a {
+  font-size: 12px; color: var(--mid); text-decoration: none;
+  display: flex; align-items: center; gap: 6px; transition: color .2s;
+}
+.footer-links a::before { content: '→'; color: var(--red); }
+.footer-links a:hover { color: var(--dark); }
+.footer-bottom {
+  max-width: 860px; margin: 0 auto; padding: 20px 48px 0;
+  border-top: 1px solid var(--rule);
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px;
+}
+.footer-copy { font-size: 11px; color: var(--light); line-height: 1.7; }
+
+/* ── LIGHTBOX ── */
+#lb { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 1000; align-items: center; justify-content: center; cursor: zoom-out; }
+#lb.on { display: flex; }
+#lb img { max-width: 90vw; max-height: 88vh; }
+#lbx { position: absolute; top: 20px; right: 28px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); cursor: pointer; }
+
+/* ── SCROLL REVEAL ── */
+.rv { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.rv.on { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .page { padding: 0 20px; }
+  .martini { padding: 0 20px; flex-direction: column; }
+  .martini-phases { flex-direction: column; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .stat-row { grid-template-columns: 1fr; }
+  .two-up { grid-template-columns: 1fr; }
+  footer { padding: 40px 0 32px; }
+  .footer-inner, .footer-bottom { padding: 0 20px; }
 }
 </style>
 </head>
@@ -169,399 +272,235 @@ footer{background:var(--dim);border-top:1px solid var(--rule);padding:64px 52px 
 
 <div id="prog"></div>
 
+<!-- NAV -->
 <nav>
-  <span class="nl">DTU 02806 · Final Project · 2026</span>
-  <ul class="nr">
-    <li><a href="#s1">The Story</a></li>
-    <li><a href="#s2">The Earthquake</a></li>
-    <li><a href="#s3">Who Stays</a></li>
-    <li><a href="#s4">Explore</a></li>
+  <span class="nav-logo">DTU 02806 · Social Data Analysis & Visualization · 2026</span>
+  <ul class="nav-links">
+    <li><a href="#guided">The Pattern</a></li>
+    <li><a href="#map">World Map</a></li>
+    <li><a href="#explore">Explore</a></li>
     <li><a href="#method">Method</a></li>
   </ul>
 </nav>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="hbg"></div>
-  <div class="hc">
-    <div class="htag rv">Consumer Behaviour · REES46 Dataset · Oct 2019 – Jan 2020</div>
-    <h1 class="hq">
-      <span class="a rv">What</span>
-      <span class="b rv"><em>breaks</em></span>
-      <span class="c rv">a buying <span>habit?</span></span>
-    </h1>
-    <p class="hdeck rv">We tracked 10,000 real online shoppers across four months and 780,000 events. The answer isn't what you'd expect.</p>
-    <div class="hstats rv">
-      <div class="hs"><span class="hsn">10,000</span><span class="hsl">Users tracked</span></div>
-      <div class="hs"><span class="hsn">4 months</span><span class="hsl">Oct 2019 – Jan 2020</span></div>
-      <div class="hs"><span class="hsn">780K</span><span class="hsl">Behavioural events</span></div>
-      <div class="hs"><span class="hsn">54.6%</span><span class="hsl">Bought once, then vanished</span></div>
+<!-- HERO -->
+<div class="page">
+<div class="hero">
+  <div class="hero-eyebrow rv">Data Story · UNICEF Child Functioning Database · 2017–2023</div>
+  <h1 class="rv">Born into<br>a <em>harder</em> world.</h1>
+  <p class="hero-deck rv">
+    In almost every country we have data for, a child born with a disability faces
+    <strong>worse outcomes</strong> in every domain we can measure —
+    education, nutrition, physical safety, and social support.
+    This is not a story about one country or one policy failure.
+    It is a pattern that appears in <strong>87–94% of surveyed countries.</strong>
+  </p>
+  <div class="hero-stats rv">
+    <div class="hs">
+      <span class="hs-n">94%</span>
+      <span class="hs-l">Of countries: disabled children<br>face more physical punishment</span>
+    </div>
+    <div class="hs">
+      <span class="hs-n">87%</span>
+      <span class="hs-l">Of countries: disabled children<br>more likely excluded from school</span>
+    </div>
+    <div class="hs">
+      <span class="hs-n">6</span>
+      <span class="hs-l">Domains measured across<br>207 countries and territories</span>
     </div>
   </div>
-  <div class="hscroll">Scroll to explore</div>
-</section>
+</div>
+</div>
 
 <!-- MARTINI STRIP -->
-<div class="mstrip">
-  <div class="ms-lbl">Martini Glass Structure</div>
-  <div class="ms-phases">
-    <div class="msp bl"><span class="msp-n">01</span><span class="msp-name">Guided Narrative</span><span class="msp-desc">We show you what we found</span></div>
-    <div class="msp pk"><span class="msp-n">02</span><span class="msp-name">Behavioural Deep Dive</span><span class="msp-desc">Who stays vs who disappears</span></div>
-    <div class="msp gr"><span class="msp-n">03</span><span class="msp-name">Open Exploration</span><span class="msp-desc">You find the pattern</span></div>
+<div class="martini">
+  <div class="martini-lbl">Martini Glass</div>
+  <div class="martini-phases">
+    <div class="mphase b">
+      <span class="mphase-n">01</span>Guided Narrative
+      <span class="mphase-sub">We show you the global pattern</span>
+    </div>
+    <div class="mphase r">
+      <span class="mphase-n">02</span>Geographic Detail
+      <span class="mphase-sub">Where is the gap largest?</span>
+    </div>
+    <div class="mphase g">
+      <span class="mphase-n">03</span>Open Exploration
+      <span class="mphase-sub">Look up any country</span>
+    </div>
   </div>
 </div>
 
-<!-- ═══ SECTION 1: THE FUNNEL ═══ -->
-<section id="s1" style="background:var(--black)">
-<div class="si">
+<!-- ═══ SECTION 1: GUIDED NARRATIVE ═══ -->
+<section id="guided">
+<div class="page">
 
-  <div class="slbl rv">
-    <span class="stag bl">01 · Guided Narrative</span>
+  <div class="slabel rv">
+    <span class="stag b">01 · Guided Narrative</span>
     <div class="srule"></div>
-    <span class="snum">§1</span>
   </div>
 
-  <h2 class="bt rv">Most people browse.<br><em>Almost nobody</em> <span class="pink">buys.</span></h2>
+  <h2 class="rv">The gap exists<br>in <em>every</em> domain.</h2>
 
-  <div class="g2 rv">
-    <div class="bt2">
-      <p>Picture a street with 100 people walking past a shop window. Only <strong>2 of them step inside.</strong> That's online shopping — a 1.99% conversion rate from view to purchase in October 2019.</p>
-      <p>Of every 250,924 times someone in our cohort looked at a product, only 5,000 purchases happened. The habit of browsing is effortless. The habit of buying is fragile.</p>
+  <div class="btext rv">
+    <p>Whether we look at nutrition, schooling, physical safety, or social support — in the large majority of countries with available data, children with disabilities are consistently worse off than children without. The gap is not a regional pattern. It appears across every part of the world represented in this dataset.</p>
+    <p>The chart below shows, for each indicator, what share of countries have a gap that disadvantages disabled children. Physical punishment leads at 94% — meaning in 60 out of 64 countries with data, a disabled child is more likely to be physically punished than a non-disabled child.</p>
+  </div>
+
+  <!-- Chart 2: Bar chart -->
+  <div class="chart-frame rv">
+    <img class="chart-img" src="chart2_gap_bars.png"
+      alt="Horizontal bar chart showing share of countries where disabled children are worse off per indicator"
+      onclick="openLb(this)">
+    <p class="chart-note">Each bar shows one indicator. The percentage is the share of surveyed countries where disabled children face a higher burden. n ranges from 45 to 64 countries per indicator depending on data availability.</p>
+  </div>
+
+  <!-- Chart 1: Waffle -->
+  <div class="chart-frame rv">
+    <img class="chart-img" src="chart1_waffle.png"
+      alt="Waffle chart: 87 out of 100 dots are red, showing 87% of countries exclude disabled children from school more"
+      onclick="openLb(this)">
+    <p class="chart-note">Each dot represents one country. Red = disabled children are more likely to be out of school at primary level. Grey = no meaningful gap. 87 out of 100 countries show a gap.</p>
+  </div>
+
+  <div class="stat-row rv">
+    <div class="scard r">
+      <div class="scard-n r">94%</div>
+      <div class="scard-l">Of countries — disabled children face more physical punishment than non-disabled children</div>
     </div>
-    <div class="bt2">
-      <p>And it gets worse over time. By January 2020, the same cohort needed <strong>72 views to produce a single purchase</strong> — up from 50 in October. More scrolling. Less committing.</p>
-      <p>This isn't about price. A $32 phone accessory and a $476 smartphone convert at almost identical rates. Something else is breaking the habit — and it starts long before checkout.</p>
+    <div class="scard r">
+      <div class="scard-n r">+6.3pp</div>
+      <div class="scard-l">Average stunting gap — disabled children are 6.3 percentage points more likely to be severely stunted</div>
+    </div>
+    <div class="scard b">
+      <div class="scard-n b">85%</div>
+      <div class="scard-l">Of countries give disabled children more social transfers — the system tries, but gaps persist</div>
     </div>
   </div>
 
-  <!-- INTERACTIVE FUNNEL -->
-  <div class="iframe-wrap rv">
-    <div class="iframe-label">
-      Monthly conversion funnel · views vs purchases · cohort of 10,000
-      <span class="iframe-badge">Interactive — hover to explore</span>
-    </div>
-    <iframe src="chart_interactive_funnel.html" height="480" scrolling="no"></iframe>
-  </div>
-
-  <div class="cw rv">
-    <div class="clbl">Habit weakening · conversion rate + browse intensity across 4 months</div>
-    <img class="cimg" src="chartA_habit_weakening.png" alt="Habit weakening" onclick="openLb(this)">
-    <p class="ccap">Left: conversion rate by month — drops from 1.99% in October to 1.35% in November, partially recovers in December, then falls again in January. Right: views needed per purchase — October requires 50 views, November spikes to 74. The buying habit is weakening.</p>
-  </div>
-
-  <div class="g3 rv" style="margin-top:48px">
-    <div class="sc pi"><div class="sc-n pink">1.99%</div><div class="sc-l">Oct conversion rate<br>the starting point</div></div>
-    <div class="sc ye"><div class="sc-n yellow">74</div><div class="sc-l">Views per purchase<br>in November — the worst month</div></div>
-    <div class="sc bl"><div class="sc-n blue">1.38%</div><div class="sc-l">Jan conversion rate<br>the habit has weakened</div></div>
+  <div class="pq rv">
+    <div class="pq-t">"In 60 out of 64 countries, a child with a disability is more likely to be physically punished than a child without one."</div>
+    <div class="pq-a">Finding · UNICEF Child Functioning Database · 2017–2023</div>
   </div>
 
 </div>
 </section>
 
-<!-- ═══ PHOTO BREAK 1 ═══ -->
-<div class="pb" style="height:320px">
-  <img src="image2.jpg" alt="Shopping cart on laptop" style="filter:brightness(.22) saturate(.4)">
-  <div class="pb-txt">
-    <div class="pb-big">Then <em>December</em><br>arrived.</div>
-    <div class="pb-sm">Same 10,000 users. Completely unrecognisable behaviour.</div>
-  </div>
-</div>
+<!-- ═══ SECTION 2: WORLD MAP ═══ -->
+<section class="alt" id="map">
+<div class="page">
 
-<!-- ═══ SECTION 2: CATEGORY EARTHQUAKE ═══ -->
-<section id="s2" style="background:var(--dim)">
-<div class="si">
-
-  <div class="slbl rv">
-    <span class="stag bl">01 · Guided Narrative cont.</span>
+  <div class="slabel rv">
+    <span class="stag r">02 · Geographic Detail</span>
     <div class="srule"></div>
-    <span class="snum">§2</span>
   </div>
 
-  <h2 class="bt rv">The <span class="yellow">Category</span><br><em>Earthquake</em></h2>
+  <h2 class="rv">Where is the school<br><em>exclusion gap</em> largest?</h2>
 
-  <div class="bt2 rv" style="margin-bottom:40px">
-    <p>In October, <strong>57% of all purchases were smartphones.</strong> Samsung. Apple. The habit looked stable. November — still 50% smartphones. Then December hit.</p>
-    <p>Smartphones collapsed to <strong>5% of purchases.</strong> Construction tools jumped from near-zero to <strong>42%.</strong> Same users. Same cohort. Completely different habits. No warning. No gradual shift. Just an earthquake between November and December that tells you everything about how fragile buying habits really are.</p>
+  <div class="btext rv">
+    <p>The world map below shows the school exclusion gap — the difference in out-of-school rates at primary level between disabled and non-disabled children — for every country with available data. <strong>Hover over any country</strong> to see the exact figures.</p>
+    <p>The darkest red countries have the largest gaps. In Laos, disabled children are more than three times as likely to be out of school (41.6% vs 13.2%). In Kosovo, the gap is nearly 31 percentage points among Roma communities. Grey countries have no data available in the UNICEF database.</p>
   </div>
 
-  <!-- INTERACTIVE CATEGORY SHIFT -->
-  <div class="iframe-wrap rv">
-    <div class="iframe-label">
-      Category share of purchases · Oct 2019 – Jan 2020 · cohort of 10,000
-      <span class="iframe-badge">Interactive — hover for details</span>
-    </div>
-    <iframe src="chart_interactive_categories.html" height="520" scrolling="no"></iframe>
+  <!-- Interactive map -->
+  <div class="chart-frame rv">
+    <iframe class="chart-iframe" src="chart3_map.html" height="500" scrolling="no" title="World map: school exclusion gap by country"></iframe>
+    <p class="chart-note">Darker red = larger gap between disabled and non-disabled children in out-of-school rates at primary level. Grey = no data. Hover for exact values. Source: UNICEF Child Functioning Database, 2017–2023.</p>
   </div>
 
-  <div class="cw rv">
-    <div class="clbl">The full earthquake — static overview</div>
-    <img class="cimg" src="chart8_category_shift.png" alt="Category shift" onclick="openLb(this)">
-    <p class="ccap">The stacked bars make the earthquake unmissable. Blue (smartphone) fills Oct and Nov. Then Dec — the blue almost disappears and pink (construction tools) dominates. The annotation marks the exact transition point.</p>
-  </div>
-
-  <div class="g3 rv">
-    <div class="sc pi"><div class="sc-n pink">57%</div><div class="sc-l">Smartphone share in Oct<br>dominant habit</div></div>
-    <div class="sc ye"><div class="sc-n yellow">5%</div><div class="sc-l">Smartphone share in Dec<br>52 percentage points gone</div></div>
-    <div class="sc gr"><div class="sc-n green">42%</div><div class="sc-l">Construction tools in Dec<br>from nowhere to dominant</div></div>
-  </div>
-
-  <div class="cw rv">
-    <div class="clbl">Brand collapse — Oct vs Dec top brands</div>
-    <img class="cimg" src="chartB_brand_collapse.png" alt="Brand collapse" onclick="openLb(this)">
-    <p class="ccap">October: Apple and Samsung account for 44% of purchases combined. December: they're still present but the brand landscape has completely shifted. New brands — Bosch, Acer, tool manufacturers — enter the top 8. The brand habit broke alongside the category habit.</p>
+  <div class="btext rv" style="margin-top: 32px">
+    <p>The education gap does not simply affect childhood. Missing primary school shapes secondary attendance, literacy, and economic opportunity across an entire life. Disabled children who are excluded from school at age 6 face compounded disadvantage at every subsequent stage.</p>
+    <p>Social protection systems do show awareness of this. In 85% of countries, disabled children receive <strong>more</strong> social transfers than non-disabled children. The system acknowledges the need — but the transfers alone are not sufficient to close the gaps in education, nutrition, and safety.</p>
   </div>
 
 </div>
 </section>
 
-<!-- ═══ SECTION 3: COHORT BLEEDS OUT ═══ -->
-<section id="s3" style="background:var(--black)">
-<div class="si">
+<!-- ═══ SECTION 3: EXPLORER ═══ -->
+<section id="explore">
+<div class="page">
 
-  <div class="slbl rv">
-    <span class="stag pk">02 · Behavioural Deep Dive</span>
+  <div class="slabel rv">
+    <span class="stag g">03 · Open Exploration</span>
     <div class="srule"></div>
-    <span class="snum">§3</span>
   </div>
 
-  <h2 class="bt rv">The cohort<br><em>bleeds</em> <span class="blue">out.</span></h2>
+  <h2 class="rv"><em>Explore</em> any country.</h2>
 
-  <div class="bt2 rv" style="margin-bottom:40px">
-    <p>Of the 10,000 users we started with in October, <strong>only 3,976 were still active in January.</strong> More than 6,000 just stopped showing up. No cancellation. No complaint. Just silence.</p>
-    <p>Among those who actually bought something in October, <strong>54.6% never purchased again</strong> in any of the three following months. One moment of commitment — and then the habit dissolved completely.</p>
+  <div class="btext rv">
+    <p>The guided narrative shows the global pattern. Now explore the data yourself. Use the slider below to select any country and see its disability gap across all available indicators — physical punishment, school exclusion, stunting, and social transfers.</p>
+    <p>A <strong style="color:var(--red)">positive gap</strong> means disabled children are worse off. A <strong style="color:var(--green)">negative gap</strong> means disabled children are actually better off on that indicator. The zero line is the point of equality.</p>
   </div>
 
-  <!-- INTERACTIVE RETENTION -->
-  <div class="iframe-wrap rv">
-    <div class="iframe-label">
-      Cohort retention · same 10,000 users month by month
-      <span class="iframe-badge">Interactive — hover for exact numbers</span>
-    </div>
-    <iframe src="chart_interactive_retention.html" height="480" scrolling="no"></iframe>
+  <!-- Interactive explorer -->
+  <div class="chart-frame rv">
+    <iframe class="chart-iframe" src="chart4_explorer.html" height="520" scrolling="no" title="Country explorer: disability gap by indicator"></iframe>
+    <p class="chart-note">Use the slider to move between countries. Gap = value for disabled children minus value for non-disabled children, in percentage points. Source: UNICEF Child Functioning Database, 2017–2023.</p>
   </div>
 
-  <div class="cw rv">
-    <div class="clbl">Retention detailed view</div>
-    <img class="cimg" src="chart7_retention.png" alt="Cohort retention" onclick="openLb(this)">
-    <p class="ccap">Blue = users still active (any event) each month. Pink = users who made a purchase. Both lines fall — but the buying habit collapses faster than general activity. By January, buyers are down to 594 from 1,812 in October.</p>
-  </div>
-
-  <div class="cw rv">
-    <div class="clbl">When the buying habit activates · hour × day heatmap</div>
-    <img class="cimg" src="chartD_timing.png" alt="Timing heatmap" onclick="openLb(this)">
-    <p class="ccap">Purchases aren't random. They cluster in specific time windows — midweek mornings and early afternoons (UTC). The buying habit, when it exists, activates at predictable moments. Yellow = highest purchase density.</p>
+  <div class="footnote-box rv">
+    <strong>A note on data coverage.</strong> Not all countries appear in the explorer — only those with data available in the UNICEF Child Functioning Database. Most high-income countries (including Denmark, Germany, the UK, and the USA) have no data in this dataset. Coverage is strongest in South Asia, sub-Saharan Africa, and parts of Latin America and the Pacific. Absence of data does not mean absence of a gap.
   </div>
 
 </div>
 </section>
 
-<!-- ═══ PHOTO BREAK 2 ═══ -->
-<div class="pb" style="height:300px">
-  <img src="image3.jpg" alt="Person shopping on phone" style="filter:brightness(.18) saturate(.4)">
-  <div class="pb-txt">
-    <div class="pb-big">So who<br><em>stays?</em></div>
-    <div class="pb-sm">Only 7.3% bought in all four months. Here's what made them different.</div>
-  </div>
-</div>
+<!-- ═══ SECTION 4: METHOD ═══ -->
+<section class="alt" id="method">
+<div class="page">
 
-<!-- ═══ SECTION 4: WHO STAYS ═══ -->
-<section style="background:var(--dim)">
-<div class="si">
-
-  <div class="slbl rv">
-    <span class="stag pk">02 · Behavioural Deep Dive cont.</span>
+  <div class="slabel rv">
+    <span class="stag b">Methodology</span>
     <div class="srule"></div>
-    <span class="snum">§4</span>
   </div>
 
-  <h2 class="bt rv">Loyal buyers<br>explore <em>more.</em></h2>
+  <h2 class="rv" style="font-size:clamp(22px,3vw,36px)">How we did this.</h2>
 
-  <div class="g2 rv">
-    <div class="bt2">
-      <p>The 132 users who bought in all four months had one thing in common: <strong>they shopped across 5.4 different categories on average.</strong> One-time buyers explored just 1.0 categories.</p>
-      <p>Loyalty isn't about loving one product or one brand. It's about being curious across many. The habit that sticks is <strong>breadth, not routine.</strong></p>
-    </div>
-    <div class="bt2">
-      <p>Loyal buyers also paid more — <strong>$340 per purchase on average</strong> versus $302 for one-time buyers. They weren't hunting for cheap deals. They were building a real relationship with the store.</p>
-      <p>And the aspiration gap — the difference between what users browse and what they buy — <strong>grew from $25 in October to $40 in January.</strong> As the habit weakened, the disconnect between wanting and committing widened.</p>
-    </div>
-  </div>
-
-  <div class="g2 rv">
+  <div class="two-up rv">
     <div>
-      <div class="clbl">Who stays vs who leaves</div>
-      <img class="cimg" src="chart9_loyal_vs_onetime.png" alt="Loyal vs one-time" onclick="openLb(this)">
-      <p class="ccap">Left: the key differences between one-time (pink) and loyal buyers (blue) across four metrics. Right: how October's 1,812 buyers split — 54.6% never returned.</p>
+      <p style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px">Dataset</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.75">The UNICEF Child Functioning Database (July 2025 release) covers 207 countries and territories. Data comes from MICS (Multiple Indicator Cluster Surveys) conducted 2017–2023. Each indicator is reported separately for children with and without functional difficulties, allowing direct gap calculation.</p>
     </div>
     <div>
-      <div class="clbl">Reaching higher, committing less</div>
-      <img class="cimg" src="chart10_aspiration_gap.png" alt="Aspiration gap" onclick="openLb(this)">
-      <p class="ccap">The gap between avg browse price and avg purchase price grows across months. As the buying habit weakens, users reach for more expensive items but pull back more at the moment of commitment.</p>
+      <p style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px">Narrative structure</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.75">We use the <strong style="color:var(--dark)">Martini Glass</strong> structure (Segel & Heer, 2010): a guided author-driven narrative in §1–2, a semi-open geographic detail layer in §2, and a fully reader-driven exploration in §3. This ensures the key finding (the gap is universal) is communicated before the reader is given freedom to explore.</p>
     </div>
   </div>
 
-  <table class="dtbl rv">
-    <thead>
-      <tr>
-        <th>Buyer type</th><th>n</th><th>Avg price paid</th>
-        <th>Categories explored</th><th>Months active</th><th>Key category</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>One-time (Oct only)</td><td>989</td><td>$302</td>
-        <td class="hl">1.0</td><td>1</td><td>Smartphone (63.8%)</td>
-      </tr>
-      <tr>
-        <td>Returned once</td><td>~420</td><td>$315</td>
-        <td>2.1</td><td>2</td><td>Smartphone + varied</td>
-      </tr>
-      <tr>
-        <td>Returned twice</td><td>~343</td><td>$326</td>
-        <td>3.8</td><td>3</td><td>Mixed electronics</td>
-      </tr>
-      <tr>
-        <td style="color:var(--yellow)">Loyal (all 4 months)</td>
-        <td style="color:var(--yellow)">132</td>
-        <td class="hl">$340</td>
-        <td class="hl">5.4</td>
-        <td class="hl">4</td>
-        <td>Smartphone + Tools + Audio</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="cw rv">
-    <div class="clbl">Price distribution · browse vs buy · all 4 months</div>
-    <img class="cimg" src="chartC_price_distribution.png" alt="Price distribution" onclick="openLb(this)">
-    <p class="ccap">Each panel shows one month. Blue = browse price distribution, red = purchase price distribution. The gap between the two vertical dashed lines is the aspiration gap. Notice it widens in December and January as the habit weakens.</p>
-  </div>
-
-</div>
-</section>
-
-<!-- PULL QUOTE -->
-<div class="pq">
-  <div class="pq-inner">
-    <div class="pq-t rv">"The habit doesn't break dramatically. It just <em>stops showing up.</em>"</div>
-    <div class="pq-a rv">Finding · 10,000-user cohort · Oct 2019 – Jan 2020 · REES46</div>
-  </div>
-</div>
-
-<!-- ═══ SECTION 5: EXPLORE ═══ -->
-<section id="s4" style="background:var(--black)">
-<div class="si">
-
-  <div class="slbl rv">
-    <span class="stag gr">03 · Open Exploration</span>
-    <div class="srule"></div>
-    <span class="snum">§5</span>
-  </div>
-
-  <h2 class="bt rv">Now <em>you</em> look.</h2>
-
-  <div class="bt2 rv" style="margin-bottom:40px">
-    <p>We've shown you the pattern we found. But every dataset hides more than it reveals. Below are the interactive charts — explore them yourself. Does the category earthquake look the same when you zoom into individual months? Do the retention numbers surprise you?</p>
-    <p><strong>Some questions worth asking:</strong> Which hour of the day produces the most purchases? Does the brand picture in November look more like October or December? What would you expect to happen in February?</p>
-  </div>
-
-  <div class="iframe-wrap rv">
-    <div class="iframe-label">
-      Category earthquake · explore month by month
-      <span class="iframe-badge">Interactive</span>
-    </div>
-    <iframe src="chart_interactive_categories.html" height="520" scrolling="no"></iframe>
-  </div>
-
-  <div class="iframe-wrap rv">
-    <div class="iframe-label">
-      Cohort retention · active users vs buyers
-      <span class="iframe-badge">Interactive</span>
-    </div>
-    <iframe src="chart_interactive_retention.html" height="480" scrolling="no"></iframe>
-  </div>
-
-  <div class="iframe-wrap rv">
-    <div class="iframe-label">
-      Monthly funnel · views, purchases, conversion rate
-      <span class="iframe-badge">Interactive</span>
-    </div>
-    <iframe src="chart_interactive_funnel.html" height="480" scrolling="no"></iframe>
-  </div>
-
-  <div class="fbox rv">
-    <div class="fbox-n">?</div>
-    <div class="fbox-t">
-      <strong>Want to go deeper?</strong> Our explainer notebook contains all the code, methodology, and data cleaning decisions behind this analysis. We explain why we chose a cohort approach, how we handled the sampling problem, and what limitations this dataset has. Link in the footer below.
-    </div>
-  </div>
-
-</div>
-</section>
-
-<!-- ═══ METHOD ═══ -->
-<section id="method" style="background:var(--dim)">
-<div class="si">
-
-  <div class="slbl rv">
-    <span class="stag ye">Methodology</span>
-    <div class="srule"></div>
-  </div>
-
-  <h2 class="bt rv" style="font-size:clamp(30px,3.5vw,52px)">How we did this.</h2>
-
-  <div class="g2 rv" style="margin-top:8px">
+  <div class="two-up rv" style="margin-top:0">
     <div>
-      <div class="mbox">
-        <div class="mbox-h">Dataset</div>
-        <div class="mbox-b">REES46 Multi-Category Online Store — behavioural event log, October 2019 to January 2020. Each row is one event (view, cart, or purchase) with a user ID, session ID, product ID, category code, brand, price, and UTC timestamp. <a href="https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store" target="_blank">Available on Kaggle</a> via Open CDP Project / REES46 Marketing Platform. Total dataset: ~42M rows per month.</div>
-      </div>
-      <div class="mbox">
-        <div class="mbox-h">Cohort construction</div>
-        <div class="mbox-b">We selected 10,000 user IDs at random from the full October 2019 file (611,800 unique users in first 5M rows, random seed=42). We then filtered all four monthly files for these exact user IDs using chunk-based processing. This avoids the sampling overlap problem that makes naive per-month random samples incomparable across months — all cross-month comparisons use the same 10,000 individuals.</div>
-      </div>
+      <p style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px">Gap calculation</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.75">For each indicator, the gap = value for disabled children minus value for non-disabled children. A positive gap means disabled children are worse off. For foundational learning (where higher = better), the gap is reversed. For social transfers, a positive gap means disabled children receive more support.</p>
     </div>
     <div>
-      <div class="mbox">
-        <div class="mbox-h">Narrative structure — Segel & Heer (2010)</div>
-        <div class="mbox-b">We follow the martini glass structure: §1–2 are author-driven (guided narrative), §3–4 are semi-open (behavioural heatmap), §5 is reader-driven exploration. Visual narrative tools used: consistent protagonist (the cohort), temporal ordering, annotations on key moments (the Dec earthquake), and interactive drill-down in the exploration section.</div>
-      </div>
-      <div class="mbox">
-        <div class="mbox-h">Limitations</div>
-        <div class="mbox-b">Our cohort (10,000 users) is a random sample — findings are directionally reliable but not exhaustive. The December category shift may partly reflect new product categories being added to the platform, not purely behavioural change. Timestamps are UTC — regional buying patterns may be obscured. Currency is likely RUB — relative price comparisons are valid, absolute figures are illustrative.</div>
-      </div>
+      <p style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px">Limitations</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.75">Data covers 45–64 countries depending on the indicator — predominantly low- and middle-income countries. We cannot make global claims. This is a cross-sectional snapshot; we cannot track whether gaps are widening or narrowing. No causal analysis is possible from this data alone.</p>
     </div>
   </div>
 
 </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
-  <div class="fi">
-    <div class="ft">
-      <div>
-        <div class="ftitle rv">What breaks<br>a buying <em>habit?</em></div>
-        <p class="fdeck rv">Curiosity. The 7.3% who kept coming back weren't loyal to a brand or a category. They were curious across 5.4 categories on average. The habit that sticks is breadth, not routine.</p>
-      </div>
-      <div class="flinks rv">
-        <a href="#" target="_blank">Explainer Notebook (GitHub)</a>
-        <a href="https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store" target="_blank">Dataset: REES46 on Kaggle</a>
-        <a href="http://vis.stanford.edu/files/2010-Narrative-InfoVis.pdf" target="_blank">Segel & Heer (2010): Narrative Visualization</a>
-        <a href="https://rees46.com" target="_blank">REES46 Marketing Platform</a>
-      </div>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-title">Born into<br>a <em>harder</em> world.</div>
+      <p class="footer-desc">A data story about the gap between children with and without disabilities — in education, nutrition, safety, and support. Built from UNICEF's Child Functioning Database.</p>
     </div>
-    <div class="fb">
-      <div class="fbcopy">
-        DTU 02806 · Social Data Analysis & Visualization · Spring 2026<br>
-        Ylfa Eysteinnsdóttir & Tanja Kristin
-      </div>
-      <div class="fbdata">
-        Photos: <a href="https://unsplash.com" target="_blank">Unsplash</a> ·
-        Data: <a href="https://rees46.com" target="_blank">REES46</a> /
-        <a href="https://www.kaggle.com/mkechinov" target="_blank">mkechinov on Kaggle</a>
-      </div>
+    <ul class="footer-links">
+      <li><a href="#" target="_blank">Explainer Notebook (GitHub)</a></li>
+      <li><a href="https://data.unicef.org/resources/child-functioning-database/" target="_blank">UNICEF Child Functioning Database</a></li>
+      <li><a href="http://vis.stanford.edu/files/2010-Narrative-InfoVis.pdf" target="_blank">Segel & Heer (2010): Narrative Visualization</a></li>
+      <li><a href="https://mics.unicef.org/" target="_blank">UNICEF MICS Surveys</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">
+      DTU 02806 · Social Data Analysis & Visualization · Spring 2026<br>
+      Ylfa Eysteinnsdóttir & Tanja Kristin
     </div>
+    <div class="footer-copy">Data: UNICEF Child Functioning Database · July 2025 release</div>
   </div>
 </footer>
 
@@ -572,27 +511,27 @@ footer{background:var(--dim);border-top:1px solid var(--rule);padding:64px 52px 
 </div>
 
 <script>
-// PROGRESS BAR
-window.addEventListener('scroll',()=>{
-  const pct=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
-  document.getElementById('prog').style.width=pct+'%';
+// Progress bar
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  document.getElementById('prog').style.width = pct + '%';
 });
 
-// SCROLL REVEAL
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')});
-},{threshold:0.1});
-document.querySelectorAll('.rv,.rvl').forEach(el=>obs.observe(el));
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
 
-// LIGHTBOX
-function openLb(img){
-  document.getElementById('lbi').src=img.src;
+// Lightbox
+function openLb(img) {
+  document.getElementById('lbi').src = img.src;
   document.getElementById('lb').classList.add('on');
 }
-function closeLb(){
+function closeLb() {
   document.getElementById('lb').classList.remove('on');
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 </script>
 </body>
 </html>
